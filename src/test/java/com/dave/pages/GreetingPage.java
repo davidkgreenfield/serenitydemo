@@ -1,17 +1,12 @@
 package com.dave.pages;
 
 import com.dave.model.Favorites;
-import com.sun.jdi.ByteType;
-import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.NamedUrl;
 import net.thucydides.core.annotations.NamedUrls;
 import net.thucydides.core.annotations.WhenPageOpens;
 import net.thucydides.core.pages.PageObject;
-import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import static org.assertj.core.api.Java6Assertions.assertThat;
 
 @NamedUrls(
     {
