@@ -1,0 +1,46 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.6.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("net.serenity-bdd:serenity-gradle-plugin:1.1.1")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-jersey')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile("org.springframework.boot:spring-boot-devtools")
+	compile("org.apache.tomcat.embed:tomcat-embed-jasper")
+	compileOnly('org.projectlombok:lombok')
+	testCompile('net.serenity-bdd:serenity-core:1.5.3')
+	testCompile('net.serenity-bdd:serenity-junit:1.5.3')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.seleniumhq.selenium:selenium-java:3.4.0')
+	testCompile('org.seleniumhq.selenium:selenium-remote-driver:3.4.0')
+	testCompile('org.seleniumhq.selenium:selenium-api:3.4.0')
+	testCompile('org.seleniumhq.selenium:selenium-chrome-driver:3.4.0')
+	testCompile('org.seleniumhq.selenium:selenium-support:3.4.0')
+	testCompile('org.seleniumhq.selenium:selenium-support:3.4.0')
+
+}
+
+gradle.startParameter.continueOnFailure = true  //assures aggregate report runs even if there are test failures
